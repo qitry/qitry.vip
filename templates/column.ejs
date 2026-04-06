@@ -1,0 +1,15 @@
+<div class="n"><%= columnName %></div>
+<div class="t">专栏文章</div>
+<div class="l">
+    <% posts.forEach(post => { %>
+        <div class="i">
+            <a href="/posts/<%= post.hash %>.html">
+                <div class="i-t"><%= post.title %></div>
+                <div class="i-m"><%= post.date %></div>
+            </a>
+        </div>
+    <% }) %>
+    <% if (posts.length === 0) { %>
+        <p style="color:#888">该专栏暂无文章</p>
+    <% } %>
+</div>

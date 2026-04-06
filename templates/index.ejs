@@ -1,0 +1,36 @@
+<div class="a-w">
+    <img class="a" src="https://fastly.jsdelivr.net/gh/qitry/Blog-Static-Resource@main/new_image/IMG_20260331_110648.webp">
+    <span class="a-d"></span>
+</div>
+<div class="n">QiTry 琪初</div>
+<div class="t">全栈开发者 · 产品设计师 · LogShare 开发者</div>
+
+<div class="nav-columns">
+    <a href="/column/casual.html">闲言碎语</a>
+    <a href="/column/featured.html">精品文章</a>
+    <a href="/column/tech.html">技术随笔</a>
+    <a href="/archive.html">搜索/归档</a>
+</div>
+
+<div class="b">
+    <p>你好，我是琪初(QiTry)。我是一名来自中国湖南的PHP全栈程序员，主要技术栈是PHP8和Vue.js以及TypeScript，在2023年到2025年这期间痴迷于网站搭建/开发和维护，但真正做下来的...一个都没有，目前除了“LogShare”也没什么项目。我的上一个网名叫“梦泽(MengZe/MengZe2)”，这个网名我用了很多年，直到我狠心退出原本的圈子，才想改名QiTry，为什么中文叫“琪初”呢？具体是因为我的初恋名字中含一个“琪”字。</p>
+            <p>讲个笑话，我目前是没有QQ的，常年和QQ斗智斗勇，它封禁了我9个QQ账号，于是我趁着2026年初的换圈子干脆直接抛弃了它——不再使用QQ做为社交软件，转而投向微信这款更好用，也更普遍的软件。</p>
+            <p>我个人呢也是习惯写作的，此前搭建过四个博客网站——并非一次性搭建四个，而是一次次迁移。再加上我是个不备份主义者，这导致我在使用的服务商跑路之后几乎没有留下任何文章数据，之前觉得挺可惜的，现在想来也算是放下一个大压力了。我长期使用Github开源的Kori做为写作软件，PC端则是使用Typora(我所使用的操作系统是Debian13)。</p>
+</div>
+
+<div class="l">
+    <div class="l-t">最近文章</div>
+    <% posts.slice(0, 5).forEach(post => { %>
+        <div class="i">
+            <a href="/posts/<%= post.hash %>.html">
+                <div class="i-t"><%= post.title %></div>
+                <div class="i-m"><%= post.column %> · <%= post.date %></div>
+            </a>
+        </div>
+    <% }) %>
+    <% if (posts.length > 5) { %>
+        <div class="i" style="margin-top: 2rem;">
+            <a href="/archive.html" style="color: #3b82f6; font-weight: 500;">查看全部 <%= posts.length %> 篇文章 →</a>
+        </div>
+    <% } %>
+</div>

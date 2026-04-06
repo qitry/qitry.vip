@@ -1,0 +1,32 @@
+<div class="n">全部文章</div>
+<div class="t">共 <%= posts.length %> 篇文章</div>
+
+<input type="text" id="searchInput" class="s-i" placeholder="搜索文章标题...">
+
+<div class="l" id="postList">
+    <% posts.forEach(post => { %>
+        <div class="i" data-title="<%= post.title.toLowerCase() %>">
+            <a href="/posts/<%= post.hash %>.html">
+                <div class="i-t"><%= post.title %></div>
+                <div class="i-m"><%= post.column %> · <%= post.date %></div>
+            </a>
+        </div>
+    <% }) %>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const postItems = document.querySelectorAll('#postList .i');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        postItems.forEach(item => {
+            const title = item.getAttribute('data-title');
+            if (title.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
