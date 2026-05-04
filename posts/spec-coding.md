@@ -1,5 +1,5 @@
 ---
-title: 关于我个人对 Spac Coding 的一些看法和理解
+title: 关于我个人对 Spec Coding 的一些看法和理解
 date: 2026-05-04
 column: 技术随笔
 ---
