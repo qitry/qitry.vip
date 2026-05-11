@@ -6,8 +6,6 @@ column: 闲言碎语
 
 Redis 之父 Salvatore Sanfilippo（antirez）于 2026 年 5 月 7 日在 GitHub 发布了 ds4.c——一个专为 DeepSeek V4 Flash 打造的本地推理引擎。这不是又一个 llama.cpp 的 wrapper，而是一个"故意做窄"的极端优化项目：只跑一个模型，只支持 Apple Silicon，只走 Metal 路径。antirez 在 README 中开宗明义："这不是通用 GGUF 加载器，不是框架，不是包装层。"
 
-![ds4.c 项目截图](https://fastly.jsdelivr.net/gh/MornZe/Blog-Static-Resource@main/images/ds4c-repo-screenshot.jpg)
-
 ## 为什么值得单独造一条"高速公路"？
 
 DeepSeek V4 Flash 发布于 2026 年 4 月 24 日，总参数 284B，激活参数仅 13B，上下文窗口 100 万 token。antirez 将其定位为"准前沿"（quasi-frontier）模型，理由很具体：
